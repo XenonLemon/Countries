@@ -37,7 +37,14 @@ public class Main
     // create a new Country using your constructor with 4 arguments (each of the arguments is a different part of the line you've read in)
     // inside the loop, set countryArray[i] to the created Country object
     //after running this method your array should contain all 10 countries from inside the countries-data file.
-     
+    Scanner countriesData = new Scanner(file);
+    while(countriesData.hasNext()){
+      int i = 0;
+      String line = countriesData.nextLine();
+      countryArray[i] = line;
+      i++;
+    }
+    countriesData.close();
     
   }
 
@@ -56,7 +63,8 @@ public class Main
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
   public void nextButtonClick()
   {
-    
+    userInput.setText("hooray");
+    outputLabel.setText("your question would go here");
   }
   
   /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
@@ -78,7 +86,7 @@ public class Main
 
 
 
-  /* You are not required to change anythign below here. You do so at your own risk! */
+  /* You are not required to change anything below here. You do so at your own risk! */
   /* The Main() constructor is finished and will construct the GUI */
 public Main() {
     jFrame.setLayout(new FlowLayout());
