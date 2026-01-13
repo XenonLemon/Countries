@@ -37,15 +37,19 @@ public class Main
     // create a new Country using your constructor with 4 arguments (each of the arguments is a different part of the line you've read in)
     // inside the loop, set countryArray[i] to the created Country object
     //after running this method your array should contain all 10 countries from inside the countries-data file.
+    try {
     Scanner countriesData = new Scanner(file);
+    int i = 0;
     while(countriesData.hasNext()){
-      int i = 0;
+      
       String line = countriesData.nextLine();
-      countryArray[i] = line;
+      String[] countryList = line.split(",");
+      Country nextCountry = new Country(countryList[0], countryList[1], countryList[2], countryList[3]);
+      countryArray[i] = nextCountry;
       i++;
-    }
+      }
     countriesData.close();
-    
+    } catch(IOException e){System.out.print("Reading File went wrong");}
   }
 
   /* showCountry() will show the image associated with the current country. It should get the country at index from the countryArray. It should use its get method to get its image file name and use the code below to put the image in the GUI.
