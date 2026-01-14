@@ -56,9 +56,9 @@ public class Main
   */
   public void showCountry() {
     // Get the country at index from countryArray
-    
+    Country currentCountry = countryArray[index];
     // Use its get method to get the its image file name and save it into imagefile variable below instead of worldmap.jpg.
-    String imagefile = "worldmap.jpg";
+    String imagefile =currentCountry.getImage();
     // Use the following code to create an new Image Icon and put it into the GUI
     img = new ImageIcon("/workspaces/Countries/workspace/"+imagefile);
     imageLabel.setIcon(img);
@@ -67,8 +67,15 @@ public class Main
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
   public void nextButtonClick()
   {
-    userInput.setText("hooray");
-    outputLabel.setText("your question would go here");
+    if(index <= 9){
+      index++;
+    }
+    else if(index > 9){
+      index = 0;
+    }
+    //userInput.setText("hooray");
+    //outputLabel.setText("your question would go here");
+    outputLabel.setText("");
   }
   
   /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
