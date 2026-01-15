@@ -75,20 +75,25 @@ public class Main
     }
     //userInput.setText("hooray");
     //outputLabel.setText("your question would go here");
-    outputLabel.setText("");
+    outputLabel.setText("What is this country?");
+    showCountry();
   }
   
   /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
   public void reviewButtonClick()
   {
-     
+     Country reviewCountry = countryArray[index];
+     String reviewCountryString = reviewCountry.toString();
+     System.out.println(reviewCountryString);
+     outputLabel.setText(reviewCountryString);
   }
 
   /* quizButton should clear the outputLabel (outputLabel.setText to empty string), get the country at index from countryArray, print out a question about it like What country is this? and/or What's this country's capital?. Get the user's answer using scan.nextLine() and check if it is equal to the country's data using its get methods and print out correct or incorrect.
   */
   public void quizButtonClick()
   {
-    Scanner scan = new Scanner(System.in); 
+    //Scanner scan = new Scanner(System.in); 
+    String userAnswer = userInput.getText();
     
     
     
