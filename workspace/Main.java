@@ -94,7 +94,19 @@ public class Main
   {
     //Scanner scan = new Scanner(System.in); 
     String userAnswer = userInput.getText();
+    outputLabel.setText("");
+    Country currentCountry = countryArray[index]; //change the name of currentCountry or not? Its a local variable, no?;
+    System.out.println("What Country is this?");
+    userAnswer=scan.nextLine(); //What about userInput.getText()?;
+    if(userAnswer.equals(currentCountry.getCountry())){
+      System.out.println("Correct!");
+    }
+    else{
+      System.out.println("Incorrect!");
+    }
+
     
+
     
     
   }
