@@ -50,6 +50,7 @@ public class Main
       }
     countriesData.close();
     } catch(IOException e){System.out.print("Reading File went wrong");}
+    nextButtonClick();
   }
 
   /* showCountry() will show the image associated with the current country. It should get the country at index from the countryArray. It should use its get method to get its image file name and use the code below to put the image in the GUI.
@@ -62,6 +63,7 @@ public class Main
     // Use the following code to create an new Image Icon and put it into the GUI
     img = new ImageIcon("/workspaces/Countries/workspace/"+imagefile);
     imageLabel.setIcon(img);
+    
   }
   
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
