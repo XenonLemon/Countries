@@ -73,8 +73,6 @@ public class Main
     else if(index >= 9){
       index = 0;
     }
-    //userInput.setText("hooray");
-    //outputLabel.setText("your question would go here");
     outputLabel.setText("What is this country?");
     showCountry();
   }
@@ -92,10 +90,10 @@ public class Main
   */
   public void quizButtonClick()
   {
-    //Scanner scan = new Scanner(System.in); 
+   
     
     outputLabel.setText("");
-    Country currentCountry = countryArray[index]; //change the name of currentCountry or not? Its a local variable, no?;
+    Country currentCountry = countryArray[index];
     String userAnswer = userInput.getText(); 
     if(userAnswer.equals(currentCountry.getCountry())){
       outputLabel.setText("Correct!");
@@ -114,7 +112,7 @@ public class Main
   /* The Main() constructor is finished and will construct the GUI */
 public Main() {
     jFrame.setLayout(new FlowLayout());
-    jFrame.setSize(500, 360);
+    jFrame.setSize(560, 360);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // buttons at the top
         JButton reviewButton = new JButton("Review");
