@@ -67,10 +67,10 @@ public class Main
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
   public void nextButtonClick()
   {
-    if(index <= 9){
+    if(index < 9){
       index++;
     }
-    else if(index > 9){
+    else if(index >= 9){
       index = 0;
     }
     //userInput.setText("hooray");
@@ -93,21 +93,17 @@ public class Main
   public void quizButtonClick()
   {
     //Scanner scan = new Scanner(System.in); 
-    String userAnswer = userInput.getText();
+    
     outputLabel.setText("");
     Country currentCountry = countryArray[index]; //change the name of currentCountry or not? Its a local variable, no?;
-    System.out.println("What Country is this?");
-    userAnswer=scan.nextLine(); //What about userInput.getText()?;
+    String userAnswer = userInput.getText(); 
     if(userAnswer.equals(currentCountry.getCountry())){
-      System.out.println("Correct!");
+      outputLabel.setText("Correct!");
     }
     else{
-      System.out.println("Incorrect!");
+      outputLabel.setText("Incorrect!");
     }
 
-    
-
-    
     
   }
 
